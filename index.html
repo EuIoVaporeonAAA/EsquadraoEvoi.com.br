@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquadrão Evoi - Pokédex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Esquadrão Evoi</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="link-pokedex">Pokédex</a></li>
+                <li><a href="https://discord.gg/Ab4yvgyn9t" id="link-discord" class="discord-btn" target="_blank">Discord</a></li>
+                <li><a href="#" id="link-chat">Chat</a></li>
+                <li><a href="#" id="link-minecraft">Servidor Minecraft</a></li>
+                <li><a href="#" id="link-news">Notícias</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Seção Pokédex -->
+    <section id="pokedex-section" style="display: none;">
+        <h2>Pokédex de Eeveelutions</h2>
+        <div id="eeveelutions-list">
+            <div class="pokemon">
+                <h3>Eevee</h3>
+                <p><strong>Tipo:</strong> Normal</p>
+                <p><strong>Descrição:</strong> Sua capacidade de evoluir para muitas formas permite que ele se adapte suave e perfeitamente a qualquer ambiente.</p>
+            </div>
+            <div class="pokemon">
+                <h3>Vaporeon</h3>
+                <p><strong>Tipo:</strong> Água</p>
+                <p><strong>Descrição:</strong> Vive perto da água. Sua longa cauda é sulcada por uma barbatana, que é frequentemente confundida com a de uma sereia.</p>
+            </div>
+            <div class="pokemon">
+                <h3>Flareon</h3>
+                <p><strong>Tipo:</strong> Fogo</p>
+                <p><strong>Descrição:</strong> O ar inalado é levado até seu pelo, é aquecido e exalado como fogo que atinge mais de 3.000 graus.</p>
+            </div>
+            <div class="pokemon">
+                <h3>Jolteon</h3>
+                <p><strong>Tipo:</strong> Elétrico</p>
+                <p><strong>Descrição:</strong> Ele concentra as fracas cargas elétricas emitidas por suas células e lança raios perversos.</p>
+            </div>
+            <div class="pokemon">
+                <h3>Leafeon</h3>
+                <p><strong>Tipo:</strong> Planta</p>
+                <p><strong>Descrição:</strong> Quando você vê Leafeon dormindo em um pedaço de folha, você sabe que ele está usando fotossíntese para produzir ar limpo.</p>
+            </div>
+            <div class="pokemon">
+                <h3>Glaceon</h3>
+                <p><strong>Tipo:</strong> Gelo</p>
+                <p><strong>Descrição:</strong> Ele pode controlar sua temperatura corporal à vontade. Isso permite que ele congele a umidade da atmosfera, criando rajadas de pó de diamante.</p>
+            </div>
+            <div class="pokemon">
+                <h3>Umbreon</h3>
+                <p><strong>Tipo:</strong> Sombrio</p>
+                <p><strong>Descrição:</strong> Quando exposto à aura da lua, os anéis em seu corpo brilham fracamente e ele ganha um poder misterioso.</p>
+            </div>
+            <div class="pokemon">
+                <h3>Espeon</h3>
+                <p><strong>Tipo:</strong> Psíquico</p>
+                <p><strong>Descrição:</strong> A ponta de sua cauda bifurcada treme quando ele prevê o próximo movimento do oponente.</p>
+            </div>
+            <div class="pokemon">
+                <h3>Sylveon</h3>
+                <p><strong>Tipo:</strong> Fada</p>
+                <p><strong>Descrição:</strong> Este Pokémon usa suas antenas em forma de fita para enviar uma aura calmante aos seus oponentes, eliminando sua hostilidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Notícias -->
+    <section id="news-section" style="display: none;">
+        <h2>Últimas Notícias sobre Eeveelutions</h2>
+        <div id="news-list">
+            <div class="news-item">
+                <h3>Novas cartas das Eeveelutions? A NOVA COLEÇÃO EVOLUÇÕES PRISMÁTICAS? BRIGAS PELAS CARTINHAS?</h3>
+                <p>O lançamento das novas cartas das Eeveelutions está gerando um grande burburinho no mundo das coleções Pokémon! Fique por dentro dessa nova coleção.</p>
+                <a href="https://pokecartas.net/blogs/a-historia-do-pikachu/evolucoes-prismaticas-do-pokemon-estampas-ilustradas-destaca-eevee-e-suas-evolucoes-como-pokemon-ex-tera-estelares" target="_blank">Leia mais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Chat -->
+<section id="chat-section" style="display: none;">
+    <h2>Chat</h2>
+    <p>Bem-vindo ao chat do Esquadrão Evoi!</p>
+    <div>
+        <!-- Dropdown para selecionar Eeveelution -->
+        <select id="name-select" onchange="setUsernameFromSelect()">
+            <option value="Anônimo">Escolha um nome ou escreva o seu</option>
+            <option value="Eevee">Eevee</option>
+            <option value="Vaporeon">Vaporeon</option>
+            <option value="Jolteon">Jolteon</option>
+            <option value="Flareon">Flareon</option>
+            <option value="Espeon">Espeon</option>
+            <option value="Umbreon">Umbreon</option>
+            <option value="Leafeon">Leafeon</option>
+            <option value="Glaceon">Glaceon</option>
+            <option value="Sylveon">Sylveon</option>
+        </select>
+        <!-- Campo de texto para nome real com limite de 15 caracteres -->
+        <input type="text" id="real-name-input" placeholder="Ou escreva seu nome real..." maxlength="15" oninput="setUsernameFromInput()">
+    </div>
+    <p><strong>Nome atual:</strong> <span id="current-username">Anônimo</span></p>
+    <div>
+        <input type="text" id="chat-input" placeholder="Digite sua mensagem...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+    <div id="chat-box"></div>
+</section>
+
+<script>
+    // Função para mudar o nome de usuário a partir da seleção do dropdown
+    function setUsernameFromSelect() {
+        const selectElement = document.getElementById("name-select");
+        const selectedName = selectElement.value;
+        document.getElementById("current-username").innerText = selectedName;
+    }
+
+    // Função para mudar o nome de usuário a partir do campo de texto (nome real)
+    function setUsernameFromInput() {
+        const inputElement = document.getElementById("real-name-input");
+        let realName = inputElement.value.trim();
+
+        // Limita o nome a 15 caracteres, caso o usuário digite mais do que isso
+        if (realName.length > 15) {
+            realName = realName.substring(0, 15);  // Corta o nome para 15 caracteres
+            inputElement.value = realName;  // Atualiza o valor do input
+        }
+
+        // Se o campo de nome real estiver vazio, mantém o nome da seleção
+        if (realName === "") {
+            const selectElement = document.getElementById("name-select");
+            const selectedName = selectElement.value;
+            document.getElementById("current-username").innerText = selectedName;
+        } else {
+            document.getElementById("current-username").innerText = realName;
+        }
+    }
+    
+    // Função para enviar uma mensagem no chat
+    function sendMessage() {
+        const message = document.getElementById("chat-input").value;
+        if (message) {
+            const chatBox = document.getElementById("chat-box");
+            const newMessage = document.createElement("p");
+            newMessage.innerText = document.getElementById("current-username").innerText + ": " + message;
+            chatBox.appendChild(newMessage);
+            document.getElementById("chat-input").value = "";
+        }
+    }
+</script>
+
+    
+    <!-- Seção do Servidor Minecraft -->
+    <section id="minecraft-section" style="display: none;">
+        <h2>Servidor Minecraft</h2>
+        <p>Somos um servidor de Minecraft agora! Venha se divertir na nossa casa de Eeveelutions Squad na versão 1.20.6.</p>
+        <p><strong>Endereço:</strong> EeveelutionsSquad.aternos.me</p>
+
+        <h3>Comandos do Servidor:</h3>
+        <ul>
+            <li>/login [senha] – Faz o login usando a senha definida anteriormente.</li>
+            <li>/register [senha] – Registra uma nova senha para sua conta.</li>
+            <li>/logout – Sai da sua conta, fazendo logout.</li>
+            <li><strong>MythicMobs (Para criar e gerenciar mobs personalizados):</strong></li>
+            <ul>
+                <li>/mm mobs – Lista todos os mobs personalizados definidos no MythicMobs.</li>
+                <li>/mm spawn [nome] – Spawna um mob personalizado no local onde você está.</li>
+                <li>/mm info [nome] – Exibe informações detalhadas sobre um mob específico.</li>
+            </ul>
+            <li><strong>EssentialsX (Comandos essenciais para administração e jogadores):</strong></li>
+            <ul>
+                <li>/home – Teleporta para a sua casa.</li>
+                <li>/sethome – Define um ponto de spawn para sua casa.</li>
+                <li>/tpa [jogador] – Envia um pedido de teleporte para outro jogador.</li>
+                <li>/warp [nome] – Teleporta você para um warp pré-definido.</li>
+                <li>/spawn – Teleporta para o ponto de spawn principal do servidor.</li>
+                <li>/msg [jogador] [mensagem] – Envia uma mensagem privada para outro jogador.</li>
+                <li>/ban [jogador] – Bane um jogador do servidor.</li>
+            </ul>
+            <li><strong>SlimeFun4 (Comandos para o mod SlimeFun):</strong></li>
+            <ul>
+                <li>/sf gui – Abre a interface gráfica do SlimeFun, onde você pode acessar as receitas de máquinas e itens.</li>
+                <li>/sf recipes – Exibe uma lista de todas as receitas do SlimeFun.</li>
+                <li>/sf craft [item] – Faz o craft de um item específico do SlimeFun.</li>
+            </ul>
+            <li><strong>Superheroes (Comandos para heróis e superpoderes):</strong></li>
+            <ul>
+                <li>/heroes list – Lista todos os heróis disponíveis no servidor.</li>
+                <li>/hero [nome] – Torna-se o herói especificado.</li>
+                <li>/powers [herói] – Exibe os poderes de um herói específico.</li>
+                <li>/superpower [poder] – Ativa um poder do super-herói selecionado.</li>
+            </ul>
+            <li><strong>SkinsRestorer (Comandos para restaurar e gerenciar skins de jogadores):</strong></li>
+            <ul>
+                <li>/skin [jogador] – Restaura a skin de um jogador.</li>
+                <li>/skin [url] – Define a skin de um jogador a partir de uma URL de imagem.</li>
+                <li>/skin reset – Restaura a skin padrão do jogador.</li>
+            </ul>
+            <li><strong>MonsterHunter (Comandos para caçar monstros e completar desafios):</strong></li>
+            <ul>
+                <li>/mh list – Lista todos os monstros caçáveis no servidor.</li>
+                <li>/mh hunt [monstro] – Inicia a caça a um monstro específico.</li>
+                <li>/mh stats – Exibe suas estatísticas de caçador de monstros.</li>
+            </ul>
+            <li><strong>GriefPrevention (Comandos para proteção de terrenos e claims):</strong></li>
+            <ul>
+                <li>/claim – Cria uma área protegida para você.</li>
+                <li>/trust [jogador] – Dá permissão a um jogador para construir em seu claim.</li>
+                <li>/untrust [jogador] – Retira a permissão de construção de um jogador no seu claim.</li>
+                <li>/claimslist – Exibe todos os seus claims.</li>
+                <li>/abandonclaim – Abandona o claim, removendo sua proteção sobre a área.</li>
+            </ul>
+        </ul>
+    </section>
+    
+    <script>
+        // Função para alternar entre as seções
+        function showSection(sectionId) {
+            const sections = ['pokedex-section', 'chat-section', 'minecraft-section', 'news-section'];
+            sections.forEach(id => {
+                document.getElementById(id).style.display = "none";
+            });
+            document.getElementById(sectionId).style.display = "block";
+        }
+
+        // Função para mudar o nome de usuário no chat
+        function setUsername(username) {
+            document.getElementById("current-username").innerText = username;
+        }
+
+        // Função para enviar uma mensagem no chat
+        function sendMessage() {
+            const message = document.getElementById("chat-input").value;
+            if (message) {
+                const chatBox = document.getElementById("chat-box");
+                const newMessage = document.createElement("p");
+                newMessage.innerText = document.getElementById("current-username").innerText + ": " + message;
+                chatBox.appendChild(newMessage);
+                document.getElementById("chat-input").value = "";
+            }
+        }
+
+        // Exibição inicial do site
+        document.getElementById("link-pokedex").addEventListener("click", () => showSection("pokedex-section"));
+        document.getElementById("link-chat").addEventListener("click", () => showSection("chat-section"));
+        document.getElementById("link-minecraft").addEventListener("click", () => showSection("minecraft-section"));
+        document.getElementById("link-news").addEventListener("click", () => showSection("news-section"));
+
+        showSection("pokedex-section"); // Exibe a seção da Pokédex por padrão
+    </script>
+</body>
+</html>

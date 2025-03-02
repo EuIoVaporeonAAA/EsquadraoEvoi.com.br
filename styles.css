@@ -1,0 +1,228 @@
+/* Estilos Gerais */
+body {
+  font-family: 'Arial', sans-serif;
+  background: #1e1e1e; /* Fundo preto */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Cabeçalho */
+header {
+  background: #5A2D81; /* Roxo escuro */
+  padding: 20px;
+  color: #FFDF00; /* Amarelo */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #FFDF00; /* Amarelo */
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+  color: #87CEEB; /* Azul claro */
+}
+
+/* Seção Principal */
+section {
+  padding: 30px 20px;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #FFDF00; /* Amarelo */
+  font-size: 28px;
+}
+
+h3 {
+  color: #87CEEB; /* Azul claro */
+  font-size: 24px;
+}
+
+/* Seção Pokédex */
+#pokedex-section {
+  background: #2a2a2a; /* Fundo escuro */
+  border-radius: 10px;
+}
+
+#eeveelutions-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.pokemon-name {
+  background: #5A2D81; /* Roxo escuro */
+  color: #FFDF00; /* Amarelo */
+  padding: 15px;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pokemon-name:hover {
+  background: #87CEEB; /* Azul claro */
+  color: #1e1e1e; /* Fundo escuro para contraste */
+}
+
+#pokemon-details {
+  background: #333333; /* Fundo mais claro para o detalhe */
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Seção Chat */
+#chat-section {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+#chat-box {
+  background: #333333;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+textarea, input[type="text"] {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #444444;
+  color: #fff;
+}
+
+button {
+  background-color: #FFDF00; /* Amarelo */
+  color: #1e1e1e;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #87CEEB; /* Azul claro */
+}
+
+/* Seção Notícias */
+#news-section {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+.news-item {
+  background: #333333;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 8px;
+}
+
+.news-item h3 {
+  color: #87CEEB; /* Azul claro */
+}
+
+.news-item a {
+  color: #FFDF00; /* Amarelo */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.news-item a:hover {
+  text-decoration: underline;
+  color: #87CEEB; /* Azul claro */
+}
+
+/* Seção Servidor Minecraft */
+#minecraft-section {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+#minecraft-section ul {
+  text-align: left;
+  margin: 20px auto;
+  padding: 0;
+  width: 80%;
+}
+
+#minecraft-section ul li {
+  margin-bottom: 10px;
+}
+
+#minecraft-section ul li strong {
+  color: #FFDF00; /* Amarelo */
+}
+
+#minecraft-section ul li ul {
+  margin-left: 20px;
+}
+
+#minecraft-section h3 {
+  color: #87CEEB; /* Azul claro */
+  margin-top: 20px;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+}
+.discord-btn {
+  background-color: #7289da; /* Cor do Discord */
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.discord-btn:hover {
+  background-color: #5b6eae; /* Cor do Discord quando o mouse passa em cima */
+}
+
